@@ -1,54 +1,64 @@
-.servicos {
-  padding: 60px 20px;
-  text-align: center;
+:root {
+  --rosa-primario: #ff85a2;
+  --rosa-escuro: #f06292;
+  --rosa-claro: #fce4ec;
+  --texto: #4a148c;
 }
 
-.servicos h2 {
-  margin-bottom: 40px;
-  color: #7a1f4d;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.servico {
+body {
+  background-color: var(--rosa-claro);
+  color: var(--texto);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
 }
 
-.emoji-box {
-  width: 180px;
-  height: 180px;
-
+.slide-container { /* Alinhando com os nomes do seu código */
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
   background: white;
-  border-radius: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
+h1, h2 { color: var(--rosa-escuro); text-align: center; }
+
+.formulario {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 90px;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
 }
 
-.texto-box {
-  width: 180px;
-  margin-top: 12px;
+input, select {
+  padding: 12px;
+  border: 2px solid var(--rosa-primario);
+  border-radius: 8px;
+  outline: none;
+}
 
-  background: white;
-  border-radius: 20px;
-
-  padding: 15px;
-
-  font-size: 22px;
+button {
+  background-color: var(--rosa-escuro);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
-  color: #7a1f4d;
+  transition: 0.3s;
+}
 
-  box-shadow: 0 5px 15px rgba(250, 134, 225, 0.1);
+button:hover { background-color: var(--rosa-primario); }
+
+/* RODAPÉ ESTILIZADO */
+footer {
+  margin-top: auto;
+  background-color: var(--rosa-escuro);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
 }
