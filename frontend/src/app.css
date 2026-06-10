@@ -3,6 +3,7 @@
   --rosa-escuro: #f06292;
   --rosa-claro: #fce4ec;
   --texto: #4a148c;
+  --branco: #ffffff;
 }
 
 body {
@@ -15,50 +16,151 @@ body {
   min-height: 100vh;
 }
 
-.slide-container { /* Alinhando com os nomes do seu código */
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* TOPO / HEADER */
+.topo {
+  text-align: center;
+  padding: 30px 20px 10px 20px;
 }
 
-h1, h2 { color: var(--rosa-escuro); text-align: center; }
+.topo h1 {
+  margin: 0 0 5px 0;
+  color: var(--rosa-escuro);
+  font-size: 2.5rem;
+}
 
+.topo p {
+  margin: 0 0 20px 0;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* MENU DE NAVEGAÇÃO POR 3 ABAS */
+.menu-abas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.menu-abas button {
+  background-color: #f8bbd0; /* Rosa suave para abas desativadas */
+  color: var(--texto);
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.menu-abas button:hover {
+  background-color: var(--rosa-primario);
+  color: var(--branco);
+  transform: translateY(-1px);
+}
+
+/* DESTAQUE DA ABA ATIVA */
+.menu-abas button.aba-ativa {
+  background-color: var(--rosa-escuro);
+  color: var(--branco);
+  box-shadow: 0 4px 12px rgba(240, 98, 146, 0.4);
+  transform: scale(1.05);
+}
+
+/* CONTAINER PRINCIPAL DA TELA */
+.conteudo-aba {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* CONTAINER DO FORMULÁRIO CENTRALIZADO */
+.cadastro {
+  max-width: 550px;
+  margin: 20px auto 50px auto;
+  padding: 30px;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.cadastro h2 {
+  color: var(--rosa-escuro);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+/* CONFIGURAÇÃO INTERNA DO FORMULÁRIO */
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px;
+  gap: 18px;
 }
 
+/* INPUTS E MENUS DE SELEÇÃO */
 input, select {
-  padding: 12px;
-  border: 2px solid var(--rosa-primario);
-  border-radius: 8px;
+  padding: 14px;
+  border: 2px solid #f48fb1;
+  border-radius: 10px;
   outline: none;
+  font-size: 1rem;
+  color: var(--texto);
+  background-color: var(--branco);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-button {
+input:focus, select:focus {
+  border-color: var(--rosa-escuro);
+  box-shadow: 0 0 8px rgba(240, 98, 146, 0.25);
+}
+
+/* BOTÃO PADRÃO DE SALVAR (ABA 1) */
+.btn-cadastrar {
   background-color: var(--rosa-escuro);
-  color: white;
-  padding: 12px;
+  color: var(--branco);
+  padding: 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(240, 98, 146, 0.3);
+  width: 100%;
 }
 
-button:hover { background-color: var(--rosa-primario); }
+.btn-cadastrar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
 
-/* RODAPÉ ESTILIZADO */
+.btn-cadastrar:active {
+  transform: translateY(0);
+}
+
+/* RODAPÉ */
 footer {
   margin-top: auto;
   background-color: var(--rosa-escuro);
-  color: white;
+  color: var(--branco);
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+footer p {
+  margin: 4px 0;
 }

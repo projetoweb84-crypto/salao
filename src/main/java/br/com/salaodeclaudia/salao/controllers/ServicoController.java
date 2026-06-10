@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/servicos")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ServicoController {
 
     @Autowired
